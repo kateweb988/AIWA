@@ -1,4 +1,6 @@
 @media screen and (max-width: 1499px)
+   .header__button
+      right: 267px
    .container
       max-width: 1200px
    .nav__box ul li a
@@ -121,16 +123,20 @@
    .our__content
       margin-right: 25px
 @media screen and (max-width: 1199px)
+   .header__button 
+      right: 139px
+      bottom: 87.5px
    .menu-btn 
       width: 60px
       height: 60px
-      position: absolute
-      right: 21px
-      top: 5px
+      position: fixed
+      right: 30px
+      top: 30px
       border-radius: 50% 
       background: url(/img/bur.svg) no-repeat center center / cover
       z-index: 11
       overflow: hidden
+      transition: 0s
    .menu-btn span 
       width: 38px
       height: 2px
@@ -156,7 +162,7 @@
       width: 100%
       height: 100%
       transform: translateX(500%)
-      transition: transform 0.5s
+      transition: 0.5s
       z-index: 7
       overflow: hidden
       &__logo 
@@ -216,6 +222,7 @@
    .menu-btn.active 
       overflow: visible
       position: fixed
+      transition: 0.5s
       right: 30px
       background: url(/img/bur2.svg) no-repeat center center / cover
       top: 30px
@@ -850,6 +857,9 @@
       padding: 57px 60px
    .geo__wrap
       margin-top: 324px
+   .header__button 
+      right: 55px
+      bottom: 71.5px
 @media screen and (max-width: 960px)
    .geo__block_1 
       transform: rotate(26.05deg)
@@ -879,6 +889,10 @@
    .area3 .tabs__btn
       font-size: 16px
 @media screen and (max-width: 767px)
+   .header__wrap h1 img 
+      right: 107px
+   .header__button
+      display: none
    .info3 .info__box
       flex-direction: column
    .info3 .info__left
@@ -1222,6 +1236,20 @@
          left: -90px
    .geo 
       padding: 106px 0 91px
+   .responsive-tabs
+      flex-direction: column
+   .responsive-tabs .active + dd
+      margin-left: 0
+   .area3__flex
+      margin-bottom: 30px
+   .responsive-tabs a
+      justify-content: center
+      margin: 0 auto 10px
+   .area3__box
+      margin-bottom: 20px
+   .area3 .tabs__btn
+      max-width: 276px
+      width: 100%
 @media screen and (max-width: 576px)
    button:active, button:focus 
       outline: none
@@ -1255,7 +1283,8 @@
       &__box 
          padding: 0 10px
    .menu-btn
-      right: 10px
+      right: 20px !important
+      top: 20px !important
    .menu-btn.active
       right: 20px
       top: 20px
@@ -1283,7 +1312,7 @@
    .header__wrap h1
       margin-bottom: 11px
    .container
-      max-width: 360px !important
+      max-width: 100% !important
    .header__btn
       font-size: 16px
       height: 50px
@@ -1546,8 +1575,11 @@
       .header__wrap
          height: 450px
          padding: 95px 29px 85px
-   .header-about .header__wrap h1 img
-      right: 12px
+   .header__wrap h1 img 
+      right: inherit
+      width: 109px
+      top: -22px
+      left: 156px
    .header-about__content
       margin-top: 0
       p 
@@ -1627,6 +1659,7 @@
       font-size: 22px
       line-height: 28px
       margin-bottom: 28px
+      padding-top: 15px
       br 
         display: none 
    .area3__item
@@ -1753,7 +1786,7 @@
          border-radius: 10px
    .stage__item
       height: 310px
-      width: 280px
+      width: 100%
       margin: 0 auto 10px !important
    .stage__box
       margin-top: 46px
@@ -1849,5 +1882,7 @@
       margin-left: -158px
    .our
       display: none
+   .area3__box
+      margin-top: 10px
 
 

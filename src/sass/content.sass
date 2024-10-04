@@ -121,11 +121,13 @@ input:-moz-placeholder, textarea:-moz-placeholder
    display: none
 .tabs__pane_show 
    display: block
-.tabs__btn_active
+.tabs__btn_active, .responsive-tabs a.active
    color: rgb(0, 0, 0) !important
    position: relative
    background: rgb(255, 255, 255)
    border: 1px solid white
+.responsive-tabs
+   display: flex
 .swiper-button-next, .swiper-button-prev
    z-index: 9
 .swiper-button-disabled
@@ -445,6 +447,23 @@ ul.info li
       &:hover 
          color: $vio
 .header
+   &__button 
+      align-items: center
+      justify-content: center
+      border-radius: 50px
+      background: white
+      width: 153px
+      height: 38px
+      color: #465187
+      font-size: 12px
+      font-weight: 500
+      line-height: 15px
+      position: absolute
+      bottom: 104.5px
+      right: 416px
+      &:hover 
+         background: $vio
+         color: white
    &__wrap 
       position: relative
       margin-top: 9px
@@ -557,6 +576,8 @@ ul.info li
       font-size: 14px
       position: relative
       z-index: 2
+      &:before 
+         display: none
    &__fig 
       position: absolute
       left: 0
@@ -729,6 +750,8 @@ ul.info li
       &:hover 
          img 
             left: 10px
+      &:before 
+         display: none
    &__block 
       display: flex
       flex-direction: column 
@@ -1395,7 +1418,7 @@ ul.info li
 .info3 
    h2 
       margin-bottom: 30px
-.tabs__btn 
+.tabs__btn, .responsive-tabs a 
    display: flex
    align-items: center
    justify-content: center
@@ -2164,3 +2187,44 @@ ul.info li
       background: url(/img/cal.svg) no-repeat 95% 48%
       background-color: white
       margin-bottom: 36px
+
+.btn  
+   position: relative 
+   overflow: hidden 
+.btn:before  
+   content: '' 
+   width: 100% 
+   height: 200% 
+   position: absolute 
+   top: 0
+   left: 0 
+   opacity: 0.5 
+   filter: blur 
+   background: linear-gradient(to left, transparent 0%, #fff 40%, #fff 60%, transparent 100%) 
+   transform: translate(-100%, -25%) rotate(10deg) 
+   animation: blick 5s infinite 
+@keyframes blick  
+   0%  
+      transform: translate(-100%, -25%) rotate(10deg) 
+   20%  
+      transform: translate(100%, -25%) rotate(10deg) 
+   100%  
+      transform: translate(100%, -25%) rotate(10deg) 
+.none
+   display: none
+.tab_select 
+   color: white
+.responsive-tabs .active + dd 
+   display: block
+.responsive-tabs dd 
+   display: none
+.responsive-tabs-placeholder 
+   display: none
+@media only screen and (min-width: 768px)   
+   .responsive-tabs .active + dd 
+      display: none
+   .responsive-tabs-placeholder 
+      display: block
+
+
+

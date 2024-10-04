@@ -104,6 +104,32 @@ document.addEventListener("DOMContentLoaded", () => {
   new ItcTabs('.tabs2');
 });
 document.addEventListener("DOMContentLoaded", () => {
+  $.fn.responsiveTabs = function () {
+
+    return this.each(function () {
+      var el = $(this),
+        tabs = el.find('a'),
+        content = el.find('dd'),
+        placeholder = $('<div class="responsive-tabs-placeholder"></div>').insertAfter(el);
+
+      tabs.on('click', function () {
+        var tab = $(this);
+
+        tabs.not(tab).removeClass('active');
+        tab.addClass('active');
+
+        placeholder.html(tab.next().html());
+      });
+
+      tabs.filter(':first').trigger('click');
+    });
+
+  }
+
+
+  $('.responsive-tabs').responsiveTabs();
+});
+document.addEventListener("DOMContentLoaded", () => {
   (function ($) {
     var elActive = '';
     $.fn.selectCF = function (options) {
